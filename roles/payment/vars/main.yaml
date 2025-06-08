@@ -1,0 +1,5 @@
+RABBITMQ_USER: roboshop
+RABBITMQ_PASSWORD: roboshop123
+CART_HOST: cart.ravada.site
+USER_HOST: user.ravada.site
+RABBITMQ_HOST: rabbitmq.ravada.site
