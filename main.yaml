@@ -2,6 +2,6 @@
   become: yes
   #hosts: "{{ component }}"
   hosts: localhost #use when deploying from terraform
-  conneection: local
+  connection: local
   roles: #this will automatically load folder called roles in current working directory
   - "{{ component }}"
