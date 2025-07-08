@@ -21,7 +21,7 @@
   - name: Checking if data is loaded into the catalogue or not
     ansible.builtin.command: mongosh --host {{ MONGODB_HOST }} --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
     register: catalogue_output
-    ignore_erros: true
+    
 
   - name: print catalogue outcome
     ansible.builtin.debug:
@@ -30,6 +30,7 @@
   - name: Loading data into the catalogue
     ansible.builtin.shell:  mongosh --host {{ MONGODB_HOST }} < /app/db/master-data.js
     when: catalogue_output.stdout | int < 0
+    ignore_erros: true
 
   - name: systemd setup
     include_role:
