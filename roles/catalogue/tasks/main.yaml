@@ -21,6 +21,7 @@
   - name: Checking if data is loaded into the catalogue or not
     ansible.builtin.command: mongosh --host {{ MONGODB_HOST }} --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
     register: catalogue_output
+    ignore_erros: true
 
   - name: print catalogue outcome
     ansible.builtin.debug:
